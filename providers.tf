@@ -23,14 +23,14 @@ provider "azurerm" {
 
   }
 
-  subscription_id = "2aca8"
-  tenant_id       = "1a1"
-  client_id       = "2a6"
-  client_secret   = "HzaM"
+  subscription_id = "2ac1e8"
+  tenant_id       = "11"
+  client_id       = "2f1"
+  client_secret   = "Hz1"
 }
 
-terraform {
-  backend "local" {
-    path = "/iac/aula06final/iacterransible/terraform.tfstate"
-  }
-}
+#terraform {
+#  backend "local" {
+#    path = "/iac/aula06final/iacterransible/providers.terraform.tfstate"
+#  }
+#}
