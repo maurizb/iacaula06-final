@@ -13,8 +13,14 @@ variable "resource_group_name" {
 variable "username" {
   type        = string
   description = "O usuario que sera usado para nos conectarmos nas VMs"
-  default     = "acmeadmin"
+  default     = "azureuser"
 
+}
+
+variable "password" {
+  type        = string
+  description = "A senha que sera usada para nos conectarmos nas VMs"
+  default     = "mauri123"
 }
 variable "porta_ssh" {
   type        = string

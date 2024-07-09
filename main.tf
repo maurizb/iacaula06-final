@@ -116,7 +116,7 @@ resource "azurerm_linux_virtual_machine" "student-vm" {
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
   network_interface_ids = [azurerm_network_interface.student-nic.id]
-  size                  = "Standard_BS1"
+  size                  = "Standard_B1s"
 
   os_disk {
     name                 = "myOsDisk1"
@@ -133,6 +133,7 @@ resource "azurerm_linux_virtual_machine" "student-vm" {
 
   computer_name  = "student-vm"
   admin_username = var.username
+  admin_password = var.password
 
   admin_ssh_key {
     username   = var.username
@@ -144,7 +145,7 @@ resource "azurerm_linux_virtual_machine" "student-vm" {
 resource "local_file" "hosts_cfg" {
   content = templatefile("inventory.tpl",
     {
-      ipvm     = azurerm_linux_virtual_machine.student-vm.private_ip_address
+      ipvm     = azurerm_linux_virtual_machine.student-vm.public_ip_address
       username = var.username
     }
   )
