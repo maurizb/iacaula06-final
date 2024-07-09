@@ -1,4 +1,4 @@
-- hosts: vmsfinal
+- hosts: all
   become: yes
   tasks:
     - name: Apt-get update
