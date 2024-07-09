@@ -7,7 +7,7 @@ output "subnet_name" {
 }
 
 output "ip_publico" {
-  value = azurerm_public_ip.student-pip.ip_address
+  value = azurerm_linux_virtual_machine.student-vm.public_ip_address
 }
 
 output "nome_da_VM" {
