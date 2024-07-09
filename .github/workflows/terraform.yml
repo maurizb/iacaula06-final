@@ -76,5 +76,5 @@ jobs:
         run: ansible-playbook -i inventory.ini ansible/playbook.yaml
         env:
           ANSIBLE_HOST_KEY_CHECKING: False
-          ANSIBLE_PRIVATE_KEY_FILE: ${{ secrets.ANSIBLE_PRIVATE_KEY_FILE }}
+          ANSIBLE_PRIVATE_KEY_FILE: private_key.pem
           ANSIBLE_USER: ${{ secrets.TF_VAR_VM_ADMIN_PASSWORD }}    
