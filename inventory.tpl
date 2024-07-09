@@ -1,2 +1,2 @@
-[vmsfinal]
+[all]
 ${ipvm}
