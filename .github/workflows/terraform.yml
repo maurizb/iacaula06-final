@@ -77,7 +77,7 @@ jobs:
         run: |
           echo "[all]" > inventory.ini
           echo "$(terraform output -raw ip_publico)" >> inventory.ini
-          ansible-playbook -i inventory.ini ansible/playbook.yaml
+          ansible-playbook -i inventory.ini ansible/playbook.yaml -vvv
         env:
           ANSIBLE_HOST_KEY_CHECKING: False
           ANSIBLE_PRIVATE_KEY_FILE: private_key.pem
