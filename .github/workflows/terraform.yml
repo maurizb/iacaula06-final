@@ -72,13 +72,12 @@ jobs:
           ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
           ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
           ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-        
-      - name: Teste inventario
-        run: cat inventory.ini
       
-      - name: Rodar ansible
-
-        run: ansible-playbook ansible/playbook.yaml
+      - name: rodar ansible
+        run: |
+          echo "[all]" > inventory.ini
+          echo "$(terraform output -raw ip_publico)" >> inventory.ini
+          ansible-playbook -i inventory.ini ansible/playbook.yml
         env:
           ANSIBLE_HOST_KEY_CHECKING: False
           ANSIBLE_PRIVATE_KEY_FILE: private_key.pem
